@@ -54,4 +54,4 @@ chat.ChildAdded:Connect(function(instance)
         HttpRequest({Url= _G.Webhook, Body = HttpService:JSONEncode(Data), Method = "POST", Headers = {["content-type"] = "application/json"}})
     end
 end)
-print("Speedman Simulator Hatch Notification - Provided by CollateralDamage")
+print("Speedman Simulator Hatch Notifications - Provided by CollateralDamage")
