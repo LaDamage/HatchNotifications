@@ -1,7 +1,15 @@
-local HttpService = game:GetService("HttpService")
-local Player = game.Players.LocalPlayer
-local chat = Player.PlayerGui.Chat.Frame.ChatChannelParentFrame["Frame_MessageLogDisplay"].Scroller
+--// Script Loader
+repeat wait() until game:IsLoaded()
 
+--// Core Variables
+local HttpService = game:GetService("HttpService")
+local HttpRequest = syn and syn.request or http_request
+
+--// Game Variables
+local player = game.Players.LocalPlayer
+local chat = player.PlayerGui.Chat.Frame.ChatChannelParentFrame["Frame_MessageLogDisplay"].Scroller
+
+--// Get Functions
 function toHex(x) 
     local hex =  string.format("%x", x)
     return hex:len() == 1 and "0"..hex or hex
@@ -20,13 +28,14 @@ function comma_value(amount)
     return formatted
 end
 
-chat.ChildAdded:Connect(function(instance)
-    local TextColor3 = instance.TextLabel.TextColor3
-    if string.find(instance.TextLabel.Text, Player.Name.." has hatched a") then
+--// Message Searching
+chat.ChildAdded:Connect(function(chat_message)
+    if chat_message.TextLabel.TextColor3 == Color3.fromRGB(85, 255, 255) then
+        local TextColor3 = chat_message.TextLabel.TextColor3
         local Data = {
             ["content"] = "",
             ["embeds"] = {{
-                ["title"] = instance.TextLabel.Text,
+                ["title"] = chat_message.TextLabel.Text,
                 ["color"] =  tonumber(RGB2HEX(unpack({TextColor3.R*255,TextColor3.G*255,TextColor3.B*255}))),
                 ["fields"] = {{
                     ["name"] = "__Total Eggs Opened:__",
@@ -42,7 +51,7 @@ chat.ChildAdded:Connect(function(instance)
             }}
         }
         
-        local HttpRequest = syn and syn.request or http_request
         HttpRequest({Url= _G.Webhook, Body = HttpService:JSONEncode(Data), Method = "POST", Headers = {["content-type"] = "application/json"}})
     end
 end)
+print("Super Sabers Hatch Notification - Provided by CollateralDamage")
