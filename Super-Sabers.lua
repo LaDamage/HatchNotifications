@@ -54,4 +54,4 @@ chat.ChildAdded:Connect(function(chat_message)
         HttpRequest({Url= _G.Webhook, Body = HttpService:JSONEncode(Data), Method = "POST", Headers = {["content-type"] = "application/json"}})
     end
 end)
-print("Super Sabers Hatch Notification - Provided by CollateralDamage")
+print("Super Sabers Hatch Notifications - Provided by CollateralDamage")
