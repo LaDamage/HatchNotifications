@@ -6,7 +6,7 @@ local HttpService = game:GetService("HttpService")
 local HttpRequest = syn and syn.request or http_request
 
 --// Game Variables
-local player = game.Players.LocalPlayer
+local player = game:GetService("Players").LocalPlayer
 local chat = player.PlayerGui.Chat.Frame.ChatChannelParentFrame["Frame_MessageLogDisplay"].Scroller
 
 --// Get Functions
@@ -35,7 +35,7 @@ chat.ChildAdded:Connect(function(chat_message)
         local Data = {
             ["content"] = "",
             ["embeds"] = {{
-                ["title"] = chat_message.TextLabel.Text,
+                ["title"] = player.Name.." just hatched a Secret or a Mythic!",
                 ["color"] =  tonumber(RGB2HEX(unpack({TextColor3.R*255,TextColor3.G*255,TextColor3.B*255}))),
                 ["fields"] = {{
                     ["name"] = "__Total Eggs Opened:__",
