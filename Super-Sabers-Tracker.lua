@@ -124,7 +124,7 @@ while true do
                 ["inline"] = false
             },
             {
-                ["name"] = "Coins Gained In 60 Seconds__",
+                ["name"] = "__Coins Gained In 60 Seconds__",
                 ["value"] = BigNum.short(BigNum.convert(CoinCalc)),
                 ["inline"] = false
             },
@@ -149,7 +149,7 @@ while true do
                 ["inline"] = false
             },
             {
-                ["name"] = "Gems Gained In 60 Seconds__",
+                ["name"] = "__Gems Gained In 60 Seconds__",
                 ["value"] = BigNum.short(BigNum.convert(GemCalc)),
                 ["inline"] = false
             },
@@ -174,7 +174,7 @@ while true do
                 ["inline"] = false
             },
             {
-                ["name"] = "Heaven Coins Gained In 60 Seconds__",
+                ["name"] = "__Heaven Coins Gained In 60 Seconds__",
                 ["value"] = BigNum.short(BigNum.convert(HeavenCoinCalc)),
                 ["inline"] = false
             },
@@ -199,7 +199,7 @@ while true do
                 ["inline"] = false
             },
             {
-                ["name"] = "Candy Corn Gained In 60 Seconds__",
+                ["name"] = "__Candy Corn Gained In 60 Seconds__",
                 ["value"] = BigNum.short(BigNum.convert(CandyCornCalc)),
                 ["inline"] = false
             },
@@ -224,7 +224,7 @@ while true do
                 ["inline"] = false
             },
             {
-                ["name"] = "Eggs Hatched In 60 Seconds__",
+                ["name"] = "__Eggs Hatched In 60 Seconds__",
                 ["value"] = BigNum.short(BigNum.convert(EggCalc)),
                 ["inline"] = false
             },
